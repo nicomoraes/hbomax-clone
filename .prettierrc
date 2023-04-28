@@ -1,0 +1,10 @@
+{
+  "arrowParens": "always",
+  "plugins": [
+    "prettier-plugin-tailwindcss"
+  ],
+  "pluginSearchDirs": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2
+}
