@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer components {
+  /* Buttons */
   .btn-primary {
     @apply z-0 border-2 border-white rounded-full tracking-widest bg-white px-6 py-2 font-semibold text-dark-blue duration-[400ms] ease-in-out hover:bg-dark-blue hover:text-white hover:duration-[400ms] hover:ease-in-out;
   }
@@ -12,6 +13,54 @@
   }
 
   .btn-tertiary {
-    @apply z-0 rounded-full bg-violet-500 px-6 py-2 font-bold text-white duration-[400ms] ease-in-out hover:bg-white hover:text-dark-blue hover:duration-[400ms] hover:ease-in-out;
+    @apply flex justify-center items-center z-0 rounded-full bg-violet-500 tracking-wide px-6 py-2 font-bold text-white duration-[400ms] ease-in-out hover:bg-white hover:text-dark-blue hover:duration-[400ms] hover:ease-in-out;
   }
-} 
+
+  /* Home brand cards */
+  .brand-card-responsive {
+     @apply relative h-[254px] w-[169px] cursor-pointer md:h-[344px] md:w-[229px] lg:h-[419px] lg:w-[279px] xl:h-[509px] xl:w-[339px];
+  }
+
+  .brand-card-no-responsive {
+     @apply relative cursor-pointer h-[509px] w-[339px];
+  }
+
+  /* Home components */
+  .home-section {
+    @apply my-12 h-max w-full;
+  }
+
+  .accordion-content {
+    @apply  overflow-hidden;
+  }
+
+  .accordion-content[data-state='open'] {
+    @apply animate-accordion-content-slide-down;
+  }
+
+  .accordion-content[data-state='closed'] {
+    @apply animate-accordion-content-slide-up;
+  }
+
+  .home-heading-2 {
+    @apply w-full text-center text-3xl text-white;
+  }
+}
+
+@layer utilities {
+  .hero-video-mask {
+    @apply absolute bottom-0 z-[1] h-1/2 w-full bg-hero-video-gradient left-0;
+  }
+
+  .plans-item-list-before {
+    @apply before:inline-block before:aspect-square before:mx-2 before:rounded-full before:bg-violet-500 before:content-[''] before:w-[5px] before:h-[5px];
+  }
+
+  .plan-card-featured-before {
+    @apply before:content-['ECONOMIZE_5_MESES'] before:bg-payment-plan-featured-card-before-gradient before:rounded-full before:absolute before:-top-5 before:px-4 before:py-1 before:tracking-widest  before:left-0 before:right-0 before:flex before:justify-center before:items-center before:w-max before:mx-auto before:text-white before:font-semibold
+  }
+
+  .experience-list-top-line {
+    @apply w-[50px] h-[2px] bg-pink-500 mb-5;
+  }
+}
