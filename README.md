@@ -1,8 +1,5 @@
 # HBOMax.com Clone
-Clone da página inicial do site hbomax.com desenvolvido com TailwindCSS no Next 13.
-
-* **Framework**: Next.js
-* **Estilização**: Tailwind CSS
+Clone da página inicial do site da [HBO Max](https://www.hbomax.com) desenvolvido com TailwindCSS e Next 13.
 
 ## Preview
 
@@ -20,8 +17,6 @@ Clone da página inicial do site hbomax.com desenvolvido com TailwindCSS no Next
 - [ ] **Accordion na seção das marcas**: Mostrar os conteúdos relacionados às marcas relacionadas, assim como acontece no site oficial.
 
 - [ ]  **Player de vídeo**: Apresentar os trailers dos filmes e séries em na seção de novos lançamentos.
-
-- [ ]  **Adicionar a estrutura restante do site**: Adicionar a página de login e de catálago de séries e filmes.
 
 ## Rodando localmente
 
