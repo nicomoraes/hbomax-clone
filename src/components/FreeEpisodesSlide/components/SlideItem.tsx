@@ -1,5 +1,5 @@
-import type { FreeEpisodes } from "@/utils/free-episodes";
 import Image from "next/image";
+import type { FreeEpisodes } from "@/utils/free-episodes";
 
 const SlideItem: React.FC<FreeEpisodes> = ({ cover, title }) => {
   return (

@@ -1,11 +1,10 @@
-"use client";
 import Image from "next/image";
-import PaymentPlanCard from "@/components/PaymentPlanCard";
 import { PAYMENT_PLANS } from "@/utils/payment-plans";
-import FreeEpisodesSlide from "@/components/FreeEpisodesSlide";
-import NewReleasesSlide from "@/components/NewReleasesSlide";
 import BrandCard from "@/components/BrandCard";
 import FaqAccordion from "@/components/FaqAccordion";
+import FreeEpisodesSlide from "@/components/FreeEpisodesSlide";
+import NewReleasesSlide from "@/components/NewReleasesSlide";
+import PaymentPlanCard from "@/components/PaymentPlanCard";
 
 export default function Home() {
   return (
@@ -88,7 +87,7 @@ export default function Home() {
         </h2>
         <NewReleasesSlide />
       </section>
-      <section className="mb-12 flex w-full items-center justify-center bg-featured-releases-navigation-background-mobile p-2">
+      <section className="mb-12 flex w-full items-center justify-center bg-new-releases-navigation-bottom-gradient  p-2">
         <button className="btn-secondary mt-5 text-xs tracking-wider">
           ASSINE AGORA
         </button>

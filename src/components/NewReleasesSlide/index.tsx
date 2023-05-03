@@ -1,10 +1,10 @@
 "use client";
+import "swiper/css";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import { RELEASES_DATA } from "@/utils/releases";
-import { SlideButton, SlideDotButton } from "./components/SlideButton";
 import SlideItem from "./components/SlideItem";
+import { SlideButton, SlideDotButton } from "./components/SlideButton";
+import { RELEASES_DATA } from "@/utils/releases";
 
 const NewReleasesSlide = () => {
   const slideLenght = RELEASES_DATA.length;

@@ -1,5 +1,5 @@
-import type { Card } from "@/utils/cards";
 import Image from "next/image";
+import type { Card } from "@/utils/cards";
 
 const Card: React.FC<Card> = ({ standard, hover }) => {
   return (

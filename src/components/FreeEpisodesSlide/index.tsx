@@ -1,10 +1,10 @@
 "use client";
+import "swiper/css";
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import type SwiperCore from "swiper";
 import SlideItem from "./components/SlideItem";
 import { SlideButton } from "./components/SlideButton";
-import SwiperCore from "swiper";
-import "swiper/css";
 import { FREE_EPISODES } from "@/utils/free-episodes";
 
 const FreeEpisodesSlide = () => {

@@ -1,9 +1,9 @@
 "use client";
-import { CARDS_DATA } from "@/utils/cards";
-import Card from "./components/Card";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore from "swiper";
 import { useRef } from "react";
+import type SwiperCore from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Card from "./components/Card";
+import { CARDS_DATA } from "@/utils/cards";
 
 const BrandCard = () => {
   const swiperRef = useRef<SwiperCore>();
@@ -43,11 +43,5 @@ const BrandCard = () => {
     </>
   );
 };
-
-// const BrandCard = () => {
-//   return (
-//
-//   );
-// };
 
 export default BrandCard;

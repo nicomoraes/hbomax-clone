@@ -40,7 +40,7 @@ module.exports = {
           "linear-gradient(to left, rgba(116, 9, 121, 1), rgba(185, 8, 246, 1), rgba(91, 28, 230, 1) )",
         "new-releases-gradient-mobile":
           "radial-gradient( 50% 66.6% at 50% 20.45%, rgba(196, 6, 154, 0.65) 0%, rgb(62 17 96) 100% )",
-        "featured-releases-navigation-background-mobile":
+        "new-releases-navigation-bottom-gradient":
           "linear-gradient(180deg, rgb(62 17 96), rgba(3, 3, 40, 0.4))",
       },
       backgroundSize: {

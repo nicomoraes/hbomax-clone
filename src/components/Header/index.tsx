@@ -1,7 +1,7 @@
-'use client';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
+"use client";
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   const [scrollPercentage, setScrollPercentage] = useState(0);
@@ -20,19 +20,19 @@ const Header = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
       className={`fixed top-0 z-20 h-[53px] w-full px-2 ${
-        scrollPercentage > 10 ? 'bg-dark-blue/30' : 'bg-dark-blue'
+        scrollPercentage > 10 ? "bg-dark-blue/30" : "bg-dark-blue"
       }`}
     >
       <nav className="flex h-full w-full items-center justify-between px-2">
         <Image
-          src={'/hbo-max-logo.svg'}
+          src={"/hbo-max-logo.svg"}
           alt="HBOMax logo"
           width={160}
           height={27}

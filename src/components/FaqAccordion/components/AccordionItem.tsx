@@ -1,3 +1,4 @@
+"use client";
 import { Item, Header, Trigger, Content } from "@radix-ui/react-accordion";
 import { AiOutlinePlus } from "react-icons/ai";
 

@@ -1,3 +1,4 @@
+"use client";
 import { Root } from "@radix-ui/react-accordion";
 import AccordionItem from "./components/AccordionItem";
 import Image from "next/image";

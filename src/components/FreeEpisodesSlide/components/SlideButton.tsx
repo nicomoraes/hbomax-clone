@@ -1,5 +1,5 @@
 "use client";
-import { HTMLAttributes } from "react";
+import type { HTMLAttributes } from "react";
 import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
 
 interface SlideButtonProps extends HTMLAttributes<HTMLButtonElement> {
