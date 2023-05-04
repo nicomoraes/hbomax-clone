@@ -1,16 +1,18 @@
 import Image from "next/image";
-import { PAYMENT_PLANS } from "@/utils/payment-plans";
+
 import BrandCard from "@/components/BrandCard";
+import PlanCard from "@/components/PlanCard";
 import FaqAccordion from "@/components/FaqAccordion";
 import FreeEpisodesSlide from "@/components/FreeEpisodesSlide";
 import NewReleasesSlide from "@/components/NewReleasesSlide";
-import PaymentPlanCard from "@/components/PaymentPlanCard";
+
+import { PAYMENT_PLANS } from "@/utils/plans";
 
 export default function Home() {
   return (
-    <main className="h-min-screen w-full bg-dark-blue">
+    <main className="h-min-screen w-full bg-background">
       {/*  */}
-      <section className="before:hero-video-mask relative min-h-screen w-full">
+      <section className="before:bottom-mask-gradient relative min-h-screen w-full">
         <video
           src="/video/hero-video.mp4"
           autoPlay
@@ -27,21 +29,21 @@ export default function Home() {
             alt="Economize 5 meses com o plano anual"
           />
           <button className="btn-secondary mt-4">ASSINE AGORA</button>
-          <p className="flex flex-col text-center text-xs text-white">
+          <p className="flex flex-col text-center text-xs text-foreground">
             *aplicável ao plano anual com <span>o pagamento antecipado.</span>
           </p>
         </div>
       </section>
       <section className="my-12 h-max w-full">
-        <div className="w-full bg-payment-plans-image bg-cover bg-center">
-          <h2 className="w-full text-center text-3xl text-white">
+        <div className="w-full bg-plan-container-image bg-cover bg-center">
+          <h2 className="w-full text-center text-3xl text-foreground">
             Escolha seu plano
           </h2>
           <div className="my-8 flex w-full flex-col items-center justify-center">
-            <p className="text-xs font-semibold tracking-wider text-white">
+            <p className="text-xs font-semibold tracking-wider text-foreground">
               O QUE ESTÁ INCLUSO?
             </p>
-            <ul className="mb-4 mt-8 grid w-full max-w-screen-lg grid-cols-3 place-items-center gap-y-4 text-center text-sm font-light text-white max-md:mx-2">
+            <ul className="mb-4 mt-8 grid w-full max-w-screen-lg grid-cols-3 place-items-center gap-y-4 text-center text-sm font-light text-foreground max-md:mx-2">
               <li className="plans-item-list-before col-span-full md:col-span-1">
                 Aproveite em todos os seus dispositivos.
               </li>
@@ -64,7 +66,7 @@ export default function Home() {
             </ul>
             <div className="mt-10 grid w-full grid-cols-1 max-xl:gap-y-5 max-xl:px-6 lg:max-w-[1200px] lg:grid-cols-3 lg:gap-x-12">
               {PAYMENT_PLANS.map((plan) => (
-                <PaymentPlanCard
+                <PlanCard
                   key={`plan-${plan.periodLabel}`}
                   period={plan.period}
                   periodLabel={plan.periodLabel}
@@ -73,7 +75,7 @@ export default function Home() {
                 />
               ))}
             </div>
-            <p className="my-12 w-full max-w-screen-md text-center text-xs font-light text-white">
+            <p className="my-12 w-full max-w-screen-md text-center text-xs font-light text-foreground">
               *Necessário pagamento antecipado. Economia baseada no preço do
               plano multitelas anual comparado ao preço do plano multitelas
               mensal durante 12 meses, excluindo impostos. Termos se aplicam.
@@ -81,19 +83,19 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="mt-12 w-full bg-new-releases-gradient">
-        <h2 className="w-full text-center text-2xl font-normal text-white">
+      <section className="mt-12 w-full bg-new-releases-container-gradient">
+        <h2 className="w-full text-center text-2xl font-normal text-foreground">
           Estreias que vão se transformar nos seus novos favoritos.
         </h2>
         <NewReleasesSlide />
       </section>
-      <section className="mb-12 flex w-full items-center justify-center bg-new-releases-navigation-bottom-gradient  p-2">
+      <section className="mb-12 flex w-full items-center justify-center bg-new-releases-container-bottom-gradient  p-2">
         <button className="btn-secondary mt-5 text-xs tracking-wider">
           ASSINE AGORA
         </button>
       </section>
       <section className="my-12 h-max w-full">
-        <h2 className="w-full text-center text-2xl font-normal text-white">
+        <h2 className="w-full text-center text-2xl font-normal text-foreground">
           Episódios grátis da HBO Max, sem precisar de uma assinatura
         </h2>
         <FreeEpisodesSlide />
@@ -104,7 +106,7 @@ export default function Home() {
         </div>
       </section>
       <section className="my-12 flex h-max w-full flex-col justify-center">
-        <h2 className="w-full text-center text-2xl font-normal text-white">
+        <h2 className="w-full text-center text-2xl font-normal text-foreground">
           Uma experiência simples e completa
         </h2>
         <div className="mx-auto mt-5 flex w-full max-w-[1140px] justify-center">
@@ -116,27 +118,27 @@ export default function Home() {
           />
         </div>
         <div className="mx-auto mt-12 flex w-full max-w-[1140px] justify-center">
-          <ul className="flex w-full items-start text-center text-lg font-light text-white max-sm:flex-col max-sm:gap-y-5 max-sm:px-2">
+          <ul className="flex w-full items-start text-center text-lg font-light text-foreground max-sm:flex-col max-sm:gap-y-5 max-sm:px-2">
             <li className="flex flex-col items-center justify-center self-start">
-              <hr className="experience-list-top-line" />
+              <hr className="mb-5 h-[2px] w-[50px] bg-quaternary" />
               <p>
                 Crie até 5 perfis e receba recomendações personalizadas para
                 cada um
               </p>
             </li>
             <li className="flex flex-col items-center justify-center">
-              <hr className="experience-list-top-line" />
+              <hr className="mb-5 h-[2px] w-[50px] bg-quaternary" />
               <p>Baixe qualquer conteúdo disponível para assistir offline</p>
             </li>
             <li className="flex flex-col items-center justify-center">
-              <hr className="experience-list-top-line" />
+              <hr className="mb-5 h-[2px] w-[50px] bg-quaternary" />
               <p>
                 Defina o conteúdo que as crianças podem assistir de acordo com
                 cada faixa etária
               </p>
             </li>
             <li className="flex flex-col items-center justify-center">
-              <hr className="experience-list-top-line" />
+              <hr className="mb-5 h-[2px] w-[50px] bg-quaternary" />
               <p>Adicione seus títulos favoritos para assistir quando quiser</p>
             </li>
           </ul>
@@ -150,7 +152,7 @@ export default function Home() {
           height={438}
           className="h-[438] w-[486px] md:h-[189px] md:w-[210px]"
         />
-        <h2 className="text-center text-2xl font-normal text-white md:text-3xl">
+        <h2 className="text-center text-2xl font-normal text-foreground md:text-3xl">
           A HBO Max traz diversão para a família toda
         </h2>
         <Image
@@ -162,13 +164,13 @@ export default function Home() {
         />
       </section>
       <section className="my-12 h-max w-full">
-        <h2 className="mb-10 text-center text-xl font-normal text-white">
+        <h2 className="mb-10 text-center text-xl font-normal text-foreground">
           Descubra novos universos
         </h2>
         <BrandCard />
       </section>
       <section className="mt-40 h-max w-full">
-        <h2 className="text-center text-xl font-normal text-white">
+        <h2 className="mb-10 text-center text-xl font-normal text-foreground">
           Alguma pergunta? A gente tem a resposta.
         </h2>
         <FaqAccordion />

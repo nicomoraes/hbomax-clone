@@ -2,18 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --background: #030328;
+    --foreground: #FFFFFF;
+    
+    --muted: #afafaf;
+
+    --border-primary: #8529DE;
+    --border-secondary: #FFFFFF;
+    --border-tertiary: #9E84E3;
+
+    --primary: #FFFFFF;
+    --primary-foreground: #030328;
+
+    --secondary: #8529DE;
+    --secondary-foreground: #FFFFFF;
+
+    --tertiary: #B535F6;
+    --tertiary-foreground: #FFFFFF;
+
+    --quaternary: #FF00E5;
+
+    --quinary: #9482FF;
+
+    --ring: #FFFFFF;
+  }
+}
+
+
 @layer components {
   /* Buttons */
   .btn-primary {
-    @apply z-0 border-2 border-white rounded-full tracking-widest bg-white px-6 py-2 font-semibold text-dark-blue duration-[400ms] ease-in-out hover:bg-dark-blue hover:text-white hover:duration-[400ms] hover:ease-in-out;
+    @apply z-0 border-2 border-border-secondary rounded-full tracking-widest bg-primary px-6 py-2 font-semibold text-primary-foreground duration-400 ease-in-out hover:bg-primary-foreground hover:text-primary hover:duration-400 hover:ease-in-out;
   }
 
   .btn-secondary {
-    @apply z-0 rounded-full border-2 border-violet-500 bg-secondary-button-gradient bg-secondary-button-size bg-secondary-button-position px-6 py-2 font-bold text-white duration-[400ms] ease-in-out hover:bg-secondary-button-hover-position hover:duration-[400ms] hover:ease-in-out;
+    @apply z-0 rounded-full border-2 border-border-primary bg-btn-secondary-gradient bg-btn-secondary-size bg-btn-secondary-position px-6 py-2 font-bold text-secondary-foreground duration-400 ease-in-out hover:bg-btn-secondary-hover-position hover:duration-400 hover:ease-in-out;
   }
 
   .btn-tertiary {
-    @apply flex justify-center items-center z-0 rounded-full bg-violet-500 tracking-wide px-6 py-2 font-bold text-white duration-[400ms] ease-in-out hover:bg-white hover:text-dark-blue hover:duration-[400ms] hover:ease-in-out;
+    @apply flex justify-center items-center z-0 rounded-full bg-tertiary tracking-wide px-6 py-2 font-bold text-tertiary-foreground duration-400 ease-in-out hover:bg-primary hover:text-primary-foreground hover:duration-400 hover:ease-in-out;
   }
 
   /* Home brand cards */
@@ -25,13 +54,8 @@
      @apply relative cursor-pointer h-[509px] w-[339px];
   }
 
-  /* Home components */
-  .home-section {
-    @apply my-12 h-max w-full;
-  }
-
   .accordion-content {
-    @apply  overflow-hidden;
+    @apply overflow-hidden;
   }
 
   .accordion-content[data-state='open'] {
@@ -42,25 +66,19 @@
     @apply animate-accordion-content-slide-up;
   }
 
-  .home-heading-2 {
-    @apply w-full text-center text-3xl text-white;
-  }
-}
-
-@layer utilities {
-  .hero-video-mask {
-    @apply absolute bottom-0 z-[1] h-1/2 w-full bg-hero-video-gradient left-0;
+  .bottom-mask-gradient {
+    @apply absolute bottom-0 z-[1] h-1/2 w-full bg-mask-gradient left-0;
   }
 
   .plans-item-list-before {
-    @apply before:inline-block before:aspect-square before:mx-2 before:rounded-full before:bg-violet-500 before:content-[''] before:w-[5px] before:h-[5px];
+    @apply before:inline-block before:aspect-square before:mx-2 before:rounded-full before:bg-secondary before:content-[''] before:w-[5px] before:h-[5px];
   }
 
-  .plan-card-featured-before {
-    @apply before:content-['ECONOMIZE_5_MESES'] before:bg-payment-plan-featured-card-before-gradient before:rounded-full before:absolute before:-top-5 before:px-4 before:py-1 before:tracking-widest  before:left-0 before:right-0 before:flex before:justify-center before:items-center before:w-max before:mx-auto before:text-white before:font-semibold
+  .plan-card-featured {
+    @apply border-border-primary border-2;
   }
 
-  .experience-list-top-line {
-    @apply w-[50px] h-[2px] bg-pink-500 mb-5;
+  .plan-card-featured:before {
+    @apply content-['ECONOMIZE_5_MESES'] bg-plan-card-featured-before-gradient rounded-full absolute -top-5 px-4 py-1 tracking-widest left-0 right-0 flex justify-center items-center w-max mx-auto text-foreground font-semibold;
   }
 }

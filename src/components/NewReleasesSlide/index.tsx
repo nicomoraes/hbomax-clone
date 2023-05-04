@@ -2,9 +2,11 @@
 import "swiper/css";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import SlideItem from "./components/SlideItem";
 import { SlideButton, SlideDotButton } from "./components/SlideButton";
-import { RELEASES_DATA } from "@/utils/releases";
+
+import { RELEASES_DATA } from "@/utils/new-releases";
 
 const NewReleasesSlide = () => {
   const slideLenght = RELEASES_DATA.length;
@@ -28,9 +30,9 @@ const NewReleasesSlide = () => {
             {/* Large screen slide navigation */}
             <div className="hidden items-center justify-center sm:flex">
               {slidePage > 1 && <SlideButton direction="previous" />}
-              <span className="ml-2 text-white">{slidePage}</span>
-              <span className="mx-2 text-white/50">/</span>
-              <span className="mr-2 text-white/50">{slideLenght}</span>
+              <span className="ml-2 text-foreground">{slidePage}</span>
+              <span className="mx-2 text-muted">/</span>
+              <span className="mr-2 text-muted">{slideLenght}</span>
               {slidePage >= 1 && slidePage < slideLenght && (
                 <SlideButton direction="next" />
               )}

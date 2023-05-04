@@ -1,6 +1,6 @@
 "use client";
 import type { HTMLAttributes } from "react";
-import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 interface SlideButtonProps extends HTMLAttributes<HTMLButtonElement> {
   direction: "previous" | "next";
@@ -12,17 +12,16 @@ export const SlideButton: React.FC<SlideButtonProps> = ({
 }) => {
   return direction === "previous" ? (
     <button className="h-[383px] w-max items-center justify-center" {...rest}>
-      <MdArrowBackIos
+      <FaChevronLeft
         size={30}
-        className="cursor-pointer text-white/50 hover:text-white"
-        style={{ verticalAlign: "middle" }}
+        className="cursor-pointer text-muted hover:text-foreground"
       />
     </button>
   ) : (
     <button className="h-[383px] w-max items-center justify-center" {...rest}>
-      <MdArrowForwardIos
+      <FaChevronRight
         size={30}
-        className="cursor-pointer text-white/50 hover:text-white"
+        className="ext-muted cursor-pointer hover:text-foreground"
       />
     </button>
   );

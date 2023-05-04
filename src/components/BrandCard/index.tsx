@@ -1,18 +1,21 @@
 "use client";
 import { useRef } from "react";
+
 import type SwiperCore from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import Card from "./components/Card";
-import { CARDS_DATA } from "@/utils/cards";
+
+import { HBO_BRAND_CARDS_DATA } from "@/utils/brand-cards";
 
 const BrandCard = () => {
   const swiperRef = useRef<SwiperCore>();
   return (
     <>
-      {/* Large screens */}
+      {/* Large screens - grid */}
       <div className="mx-auto mt-12 flex h-max w-full flex-col gap-y-4 max-sm:hidden">
-        <div className="mx-auto grid max-w-screen-xl grid-cols-3 items-center justify-center gap-6 bg-dark-blue">
-          {CARDS_DATA.map((brand) => (
+        <div className="mx-auto grid max-w-screen-xl grid-cols-3 items-center justify-center gap-6 bg-background">
+          {HBO_BRAND_CARDS_DATA.map((brand) => (
             <Card
               key={`brand-${brand.standard.split("-")[0]}-card`}
               standard={brand.standard}
@@ -21,7 +24,7 @@ const BrandCard = () => {
           ))}
         </div>
       </div>
-      {/* Mobile */}
+      {/* Mobile - slide */}
       <Swiper
         slidesPerView={"auto"}
         spaceBetween={16}
@@ -30,7 +33,7 @@ const BrandCard = () => {
         }}
         className="!hidden h-max w-full max-sm:!block"
       >
-        {CARDS_DATA.map((brand, index) => (
+        {HBO_BRAND_CARDS_DATA.map((brand, index) => (
           <SwiperSlide
             className="!w-max"
             key={`brand-${brand.standard.split("-")[0]}-card`}

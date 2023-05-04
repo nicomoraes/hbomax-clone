@@ -1,7 +1,16 @@
 import Image from "next/image";
-import { Cast } from "@/utils/releases";
 
-const CastMember: React.FC<Cast> = ({ character, characterImage, name }) => {
+export interface CastMemberProps {
+  name: string;
+  character: string;
+  characterImage: string;
+}
+
+const CastMember: React.FC<CastMemberProps> = ({
+  character,
+  characterImage,
+  name,
+}) => {
   return (
     <div className="flex flex-col items-center justify-center text-center max-sm:text-xs">
       <Image src={characterImage} width={85} height={85} alt={name} />

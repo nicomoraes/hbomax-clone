@@ -1,8 +1,3 @@
-export type FreeEpisodes = {
-  title: string;
-  cover: string;
-};
-
 export const FREE_EPISODES = [
   {
     title: "LOVE AND DEATH",

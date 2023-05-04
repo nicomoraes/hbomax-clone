@@ -1,8 +1,15 @@
 import Image from "next/image";
-import type { IRelease } from "@/utils/releases";
-import CastMember from "./CastMember";
+import CastMember, { type CastMemberProps as CastType } from "./CastMember";
 
-const SlideItem: React.FC<IRelease> = ({
+export interface SlideItemProps {
+  cast: CastType[];
+  cover: string;
+  date: string;
+  synopsis: string;
+  title: string;
+}
+
+const SlideItem: React.FC<SlideItemProps> = ({
   cast,
   cover,
   date,
@@ -13,9 +20,9 @@ const SlideItem: React.FC<IRelease> = ({
     <>
       {/* Large Screens */}
       <div className={`hidden gap-x-5 sm:flex`}>
-        <div className="flex w-1/2 flex-col gap-y-1 text-white">
+        <div className="flex w-1/2 flex-col gap-y-1 text-foreground">
           <h3 className="text-2xl font-semibold tracking-wider">{title}</h3>
-          <span className="w-max bg-new-releases-date-gradient p-1 font-semibold tracking-wider">
+          <span className="w-max bg-new-releases-details-date-gradient p-1 font-semibold tracking-wider">
             {date}
           </span>
           <p className="my-4 font-light max-lg:text-sm">{synopsis}</p>
@@ -41,7 +48,7 @@ const SlideItem: React.FC<IRelease> = ({
       </div>
       {/* Mobile Screens */}
       <div className={`flex flex-col gap-x-5 sm:hidden`}>
-        <div className="flex h-9 w-full items-center justify-center bg-new-releases-date-gradient text-center font-semibold tracking-wider text-white">
+        <div className="flex h-9 w-full items-center justify-center bg-new-releases-details-date-gradient text-center font-semibold tracking-wider text-foreground">
           {date}
         </div>
         <div className="relative">
@@ -60,7 +67,7 @@ const SlideItem: React.FC<IRelease> = ({
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer"
           />
         </div>
-        <div className="z-10 mx-auto -mt-10 flex w-full max-w-[95%] flex-col items-center justify-center rounded-lg bg-new-releases-gradient-mobile px-4 py-1 text-white">
+        <div className="z-10 mx-auto -mt-10 flex w-full max-w-[95%] flex-col items-center justify-center rounded-lg bg-new-releases-details-mobile-gradient px-4 py-1 text-foreground">
           <h3 className="text-center text-2xl font-semibold tracking-wider">
             {title}
           </h3>
